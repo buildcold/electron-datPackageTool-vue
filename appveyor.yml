@@ -1,0 +1,32 @@
+version: 2.0.{build}
+
+platform:
+  - x64
+
+cache:
+  - node_modules
+  - '%USERPROFILE%\.electron'
+
+init:
+  - git config --global core.autocrlf input
+
+install:
+  - ps: Install-Product node 7 x64
+  - yarn install
+
+build_script:
+  - yarn run build:win32
+
+test: off
+
+artifacts:
+- path: builds\electron-vue-project-win32-x64\*.exe
+  name: electron-datPackageTool-vue-win-v$(appveyor_build_version)
+  type: WebDeployPackage
+  
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: eqU+9EQfDVZEHnsu/5/FAXLG616PBsTpsGEecKEIKptjNubdISf27ZSsYs4Gmwwe
+  artifact: electron-quick-start-win-v$(appveyor_build_version)
+  draft: true
