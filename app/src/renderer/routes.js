@@ -1,11 +1,12 @@
 export default [
   {
     path: '/',
-    name: 'landing-page',
-    component: require('components/LandingPageView')
+    name: 'app-page',
+    component: require('components/AppPageView')
   },
   {
     path: '*',
     redirect: '/'
   }
+
 ]

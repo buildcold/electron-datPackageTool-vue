@@ -16,6 +16,7 @@ let rendererConfig = {
   entry: {
     renderer: path.join(__dirname, 'app/src/renderer/main.js')
   },
+  // 不打包的模块;
   externals: Object.keys(pkg.dependencies || {}),
   module: {
     rules: [
@@ -85,7 +86,7 @@ let rendererConfig = {
       template: './app/index.ejs',
       appModules: process.env.NODE_ENV !== 'production'
         ? path.resolve(__dirname, 'app/node_modules')
-        : false,
+        : false
     }),
     new webpack.NoEmitOnErrorsPlugin()
   ],
@@ -95,11 +96,12 @@ let rendererConfig = {
     path: path.join(__dirname, 'app/dist')
   },
   resolve: {
+    extensions: ['.js', '.vue', '.json', '.css', '.node'],
     alias: {
+      'vue': path.join(__dirname, 'app/node_modules/vue/dist/vue.esm.js'),
       'components': path.join(__dirname, 'app/src/renderer/components'),
       'renderer': path.join(__dirname, 'app/src/renderer')
     },
-    extensions: ['.js', '.vue', '.json', '.css', '.node'],
     modules: [
       path.join(__dirname, 'app/node_modules'),
       path.join(__dirname, 'node_modules')
