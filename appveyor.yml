@@ -20,7 +20,7 @@ build_script:
 test: off
 
 artifacts:
-- path: builds\electron-vue-project-win32-x64\*.exe
+- path: builds\electron-vue-project-win32-x64\
   name: electron-datPackageTool-vue-win-v$(appveyor_build_version)
   type: WebDeployPackage
   
