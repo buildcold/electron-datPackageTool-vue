@@ -24,6 +24,6 @@
 
   body {
     font-family: Lato, Helvetica, sans-serif;
-
+    box-shadow:0 0 10px 20px #3d0ab7;
   }
 </style>

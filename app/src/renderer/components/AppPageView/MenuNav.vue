@@ -10,17 +10,17 @@
             <Icon type="disc" size="32"></Icon><br/>(固件)升级包
           </div>
         </Col>
-        <Col class-name="navCol" :class="{actived:appIsActive}" @click="switchAppTab" span="6">
+        <Col class-name="navCol" :class="{actived:appIsActive}" span="6">
           <div @click="switchAppTab" >
             <Icon type="social-android" size="32"></Icon><br/>(App)升级包
           </div>
         </Col>
-        <Col class-name="navCol" :class="{actived:telnetIsActive}" @click="switchTelnetTab" span="6">
+        <Col class-name="navCol" :class="{actived:telnetIsActive}"  span="6">
           <div @click="switchTelnetTab" >
             <Icon type="social-dropbox" size="32"></Icon><br/>(柜面应用)升级包
           </div>
         </Col>
-        <Col class-name="navCol" :class="{actived:a10IsActive}" @click="switchA10Tab" span="6">
+        <Col class-name="navCol" :class="{actived:a10IsActive}"  span="6">
           <div @click="switchA10Tab" >
             <Icon type="android-phone-landscape" size="32"></Icon><br/>(A10)升级包
           </div>
@@ -119,6 +119,7 @@
   .navRow{
     padding: 10px 0;
     color: #7180fb;
+    -webkit-app-region: no-drag;
   }
   .navCol{
     text-align: center;
